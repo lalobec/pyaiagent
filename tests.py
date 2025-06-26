@@ -4,6 +4,7 @@ import unittest
 from functions.get_files_info import get_files_info
 from functions.get_file_content import get_file_content
 from functions.write_file import write_file
+from functions.run_python import run_python_file
 
 
 class TestGetFilesFunc(unittest.TestCase):
@@ -31,16 +32,31 @@ class TestGetFilesFunc(unittest.TestCase):
 
     def test_file_content_3(self):
         print(get_file_content("calculator", "/bin/cat"))
-    """
 
     def test_write_file1(self):
-        print(write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum"))
+        print(write_file("calculator", "lorem.txt", "wait,
+        this isn't lorem ipsum"))
 
     def test_write_file2(self):
-        print(write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet"))
+        print(write_file("calculator", "pkg/morelorem.txt",
+        "lorem ipsum dolor sit amet"))
 
     def test_write_file3(self):
-        print(write_file("calculator", "/tmp/temp.txt", "this should not be allowed"))
+        print(write_file("calculator", "/tmp/temp.txt",
+        "this should not be allowed"))
+    """
+
+    def test_run_python_file1(self):
+        print(run_python_file("calculator", "main.py"))
+
+    def test_run_python_file2(self):
+        print(run_python_file("calculator", "tests.py"))
+
+    def test_run_python_file3(self):
+        print(run_python_file("calculator", "../main.py"))
+
+    def test_run_python_file4(self):
+        print(run_python_file("calculator", "nonexistent.py"))
 
 
 if __name__ == "__main__":
